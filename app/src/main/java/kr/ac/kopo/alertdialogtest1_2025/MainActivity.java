@@ -35,13 +35,20 @@ public class MainActivity extends AppCompatActivity {
                 final int[] imgRes = {R.drawable.food01, R.drawable.food02, R.drawable.food03};
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("인공지능소프트웨어과 공지사항");
-                dlg.setItems(foodItems, new DialogInterface.OnClickListener() {
+                dlg.setSingleChoiceItems(foodItems, 0 ,new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         btn1.setText(foodItems[which]);
                         imgv.setImageResource(imgRes[which]);
                     }
                 });
+//                dlg.setItems(foodItems, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        btn1.setText(foodItems[which]);
+//                        imgv.setImageResource(imgRes[which]);
+//                    }
+//                });
 //                dlg.setMessage("우리과 학생이 사용해야 한다고 친절하게 양해를 구하면 됩니다.");
                 dlg.setIcon(R.drawable.android14_icon);
                 dlg.setPositiveButton("닫기", null);
